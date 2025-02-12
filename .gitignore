@@ -48,3 +48,4 @@ android/app/google-services.json
 
 # Firebase конфигурация (iOS)
 ios/Runner/GoogleService-Info.plist
+lib/firebase_options.dart
