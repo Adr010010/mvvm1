@@ -1,42 +1,88 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+  MyApp({super.key});
+  final List<String> list = [
+    "Hi, Aidar",
+    "Hello, Aidar",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.grey[800],
-            centerTitle: true,
-            title: Text(
-              'Stack Example',
-              style: TextStyle(
-                  fontFamily: "Lato",
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white),
+        appBar: AppBar(
+          title: Text("Hi"),
+        ),
+        body: ListView.separated(
+            itemCount: list.length,
+            itemBuilder: (_, index) => Text(
+                  list[index],
+                  style: TextStyle(fontSize: 100),
+                ),
+            separatorBuilder: (_, __) => Divider(
+                  color: Colors.black,
+                  thickness: 10,
+                )
+            //   controller: CarouselController(initialItem: 40),
+            //   reverse: true,
+            //   children: list
+            //       .map((a) => Text(
+            //             a,
+            //             style: TextStyle(fontSize: 100),
+            //           ))
+            //       .toList(),
+            // ),
             ),
-          ),
-          body: Center(
-            child: Stack(
-              children: [
-                Icon(Icons.favorite, size: 400, color: Colors.red),
-                Positioned(
-                    top: 350,
-                    right: 150,
-                    child: Text("Hello",
-                        style: TextStyle(
-                            fontSize: 40,
-                            fontWeight: FontWeight.bold,
-                            fontFamily: "Lato"))),
-              ],
-            ),
-          )),
+        // Center(
+        //   child: Container(
+        //     width: 400,
+        //     height: 400,
+        //     color: Colors.grey[400],
+        //     child: Wrap(
+        //       alignment: WrapAlignment.center,
+        //       runAlignment: WrapAlignment.center,
+        //       verticalDirection: VerticalDirection.up,
+        //       direction: Axis.horizontal,
+        //       spacing: 20,
+        //       runSpacing: 20,
+        //       textDirection: TextDirection.rtl,
+        //       children: [
+        //         Container(color: Colors.amber, width: 100, height: 100),
+        //         Container(color: Colors.amber, width: 100, height: 100),
+        //         Container(color: Colors.amber, width: 100, height: 100),
+        //         Container(color: Colors.amber, width: 100, height: 100),
+        //         Container(color: Colors.amber, width: 100, height: 100),
+        //       ],
+        //     ),
+        //   ),
+        // )
+        // Center(
+        //   child: Stack(
+        //     children: [
+        //       Icon(Icons.favorite, size: 400, color: Colors.red),
+        //       Positioned(
+        //           top: 350,
+        //           right: 150,
+        //           child: Text("Hello",
+        //               style: TextStyle(
+        //                   fontSize: 40,
+        //                   fontWeight: FontWeight.bold,
+        //                   fontFamily: "Lato"))),
+        //     ],
+        //   ),
+        // )
+      ),
     );
   }
 }
